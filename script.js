@@ -20,3 +20,8 @@ const chess = new Chess();
 console.log(chess.ascii()); // Displays the board
 chess.move('e4');          // Makes a move
 console.log(chess.fen());  // Displays the current board state
+const stockfish = new Worker('https://cdn.jsdelivr.net/gh/niklasf/stockfish.js/stockfish.js'); // Use the local path if downloaded
+
+stockfish.onmessage = (event) => {
+    console.log('Stockfish says:', event.data);
+};
