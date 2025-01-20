@@ -1,46 +1,44 @@
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-    background-color: #f4f4f9;
-    color: #333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f3f4f6; /* Light gray background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh; /* Full-screen height */
 }
 
-h1 {
-    color: #222;
+/* Main container */
+#app {
+  max-width: 600px;
+  margin: auto;
 }
 
-#game-info {
-    margin: 20px 0;
+/* Chess button styling */
+#chess-button {
+  padding: 20px 40px;       /* Makes the button large and clickable */
+  font-size: 1.5rem;        /* Larger font for readability */
+  font-weight: bold;
+  color: #ffffff;           /* White text color */
+  background-color: #4caf50; /* Green background */
+  border: none;             /* Removes default border */
+  border-radius: 8px;       /* Rounded corners */
+  cursor: pointer;          /* Pointer cursor on hover */
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
-#board-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
+/* Button hover effect */
+#chess-button:hover {
+  background-color: #45a049; /* Darker green when hovered */
 }
 
-#controls {
-    margin: 20px 0;
-}
-
-#player-move {
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #ddd;
-}
-
-#board {
-    width: 400px;
-    margin: 0 auto;
+/* Status text styling */
+p {
+  font-size: 1.2rem; /* Slightly larger text */
+  margin: 10px 0;
+  color: #333; /* Dark gray text */
 }
