@@ -1,44 +1,39 @@
-/* General body styling */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f3f4f6; /* Light gray background */
+  background-color: #f3f4f6;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh; /* Full-screen height */
+  height: 100vh;
 }
 
-/* Main container */
 #app {
   max-width: 600px;
   margin: auto;
 }
 
-/* Chess button styling */
 #chess-button {
-  padding: 20px 40px;       /* Makes the button large and clickable */
-  font-size: 1.5rem;        /* Larger font for readability */
+  padding: 20px 40px;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #ffffff;           /* White text color */
-  background-color: #4caf50; /* Green background */
-  border: none;             /* Removes default border */
-  border-radius: 8px;       /* Rounded corners */
-  cursor: pointer;          /* Pointer cursor on hover */
+  color: #ffffff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   margin-bottom: 20px;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 #chess-button:hover {
-  background-color: #45a049; /* Darker green when hovered */
+  background-color: #45a049;
 }
 
-/* Status text styling */
 p {
-  font-size: 1.2rem; /* Slightly larger text */
+  font-size: 1.2rem;
   margin: 10px 0;
-  color: #333; /* Dark gray text */
+  color: #333;
 }
