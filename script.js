@@ -16,3 +16,7 @@ if ('vibrate' in navigator) {
 } else {
     console.log('Vibration API not supported on this device.');
 }
+const chess = new Chess();
+console.log(chess.ascii()); // Displays the board
+chess.move('e4');          // Makes a move
+console.log(chess.fen());  // Displays the current board state
