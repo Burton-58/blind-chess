@@ -10,7 +10,8 @@ let listening = false;
 const stockfish = new Worker("stockfish.js");
 stockfish.postMessage("uci");
 
-const chess = new Chess(); // Using the Chess.js library for move validation
+// Initialize Chess.js
+const chess = new Chess();
 
 button.addEventListener("click", () => {
   if (!listening) {
@@ -19,19 +20,24 @@ button.addEventListener("click", () => {
     moveBuffer = [];
     setTimeout(processMove, 5000); // Wait 5 seconds for input
   } else {
-    moveBuffer.push("1"); // Record each click as a part of the input
+    moveBuffer.push(1); // Record a click as "1"
   }
 });
 
 function processMove() {
   listening = false;
+
   const move = decodeMove(moveBuffer);
   if (chess.move(move)) {
     moveDisplay.textContent = `Last move: ${move}`;
+    status.textContent = "Processing bot's move...";
+
+    // Send position to Stockfish
     stockfish.postMessage(`position fen ${chess.fen()}`);
     stockfish.postMessage("go depth 15");
   } else {
     status.textContent = "Invalid move. Try again!";
+    moveBuffer = [];
   }
 }
 
@@ -45,8 +51,9 @@ stockfish.onmessage = (event) => {
 };
 
 function decodeMove(buffer) {
-  // Map buffer to chess notation (e.g., e2e4)
-  // Simplified decoding for testing
-  const clicks = buffer.length;
-  return clicks === 8 ? "e2e4" : "d2d4"; // Replace with proper logic
+  // Example decoding: hardcoded for simplicity
+  // e.g., [5, 2, 5, 4] → "e2e4"
+  if (buffer.length === 8) return "e2e4";
+  if (buffer.length === 6) return "d2d4";
+  return null; // Invalid move
 }
