@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessible Chess</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.0/chess.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/niklasf/stockfish.js/stockfish.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Accessible Chess for the Blind</h1>
-    <p>Use the volume button or website controls to input moves.</p>
-    <button id="start-game">Start Game</button>
+    <p>Enter your move using the input field or directly on the board.</p>
+
+    <div id="game-info">
+        <p id="status">Game started. Your move!</p>
+    </div>
+
+    <div id="board-container">
+        <div id="board"></div>
+    </div>
+
+    <div id="controls">
+        <input id="player-move" type="text" placeholder="Enter move (e.g., e2e4)">
+        <button id="submit-move">Submit Move</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard-1.0.0.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.0/chess.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/niklasf/stockfish.js/stockfish.js"></script>
