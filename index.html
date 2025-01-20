@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessible Chess</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.0/chess.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/niklasf/stockfish.js/stockfish.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard-1.0.0.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Bot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Accessible Chess for the Blind</h1>
-    <p>Enter your move using the input field or directly on the board.</p>
-
-    <div id="game-info">
-        <p id="status">Game started. Your move!</p>
-    </div>
-
-    <div id="board-container">
-        <div id="board"></div>
-    </div>
-
-    <div id="controls">
-        <input id="player-move" type="text" placeholder="Enter move (e.g., e2e4)">
-        <button id="submit-move">Submit Move</button>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard-1.0.0.min.js"></script>
-    <script src="script.js"></script>
+  <div id="app">
+    <button id="chess-button">Press for Move</button>
+    <p id="status">Waiting for input...</p>
+    <p id="move">Last move: None</p>
+    <p id="bot-move">Bot move: None</p>
+  </div>
+  <script src="chess.js"></script>
+  <script src="stockfish.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
